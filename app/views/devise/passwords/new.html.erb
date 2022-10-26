@@ -1,3 +1,6 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-4">
+  <br>
 <h2>Forgot your password?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -14,5 +17,6 @@
     <%= f.button :submit, "Send me reset password instructions" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+ <a href="/users/sign_in" class="btn btn-default btn-primary">Log in</a>
+ <a href="/users/sign_up" class="btn btn-default btn-secondary">Sign up</a>
+<%# <%= render "devise/shared/links" %>
