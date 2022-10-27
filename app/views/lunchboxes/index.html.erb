@@ -1,19 +1,22 @@
-<p> <%= @lunchboxes.first %></p>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
-  <div class="container">
-    <h1><strong>Top Movies</strong></h1>
-  </div>
-</div>
-
 <div class="container">
+
+  <div class="card-category mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Marmitas Fit
+  </div>
+
+
+
+
+<div class="cards card-trip mt-3">
   <% @lunchboxes.each do |lunchbox| %>
-        <div class="card-product mt-3">
-          <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
-          <div class="card-product-infos">
-            <h2><%= link_to lunchbox.food, lunchboxes_path(lunchbox) %></h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+    <div class="card-trip-infos" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <div>
+        <h2><%= link_to lunchbox.food, lunchboxes_path(lunchbox), class: "text-decoration-none" %></h2>
+        <p><%= lunchbox.size %></p>
+      </div>
+      <h2 class="card-trip-pricing">R$ <%= lunchbox.price %>,00</h2>
+    </div>
   <% end %>
+</div>
 </div>
