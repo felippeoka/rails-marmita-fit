@@ -28,7 +28,7 @@ class LunchboxesController < ApplicationController
   private
 
   def lunchbox_params
-    params.require(:lunchbox).permit(:food, :size, :price)
+    params.require(:lunchbox).permit(:food, :size, :price, :photo)
   end
 
   def set_lunchbox
