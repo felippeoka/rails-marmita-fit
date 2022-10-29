@@ -1,13 +1,11 @@
 <div> 
+  <div class="mx-auto d-flex justify-content-center mt-3" style="width: 600px;">
+    <%= cl_image_tag @lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
+  </div>
+
   <h1  class="d-flex justify-content-center"><%= @lunchbox.food  %></h1>
   <h2 class="d-flex justify-content-center"><%= @lunchbox.size  %></h2>  
-  <h2 class="d-flex justify-content-center"><%= @lunchbox.price  %></h2>  
-    <div class="mx-auto d-flex justify-content-center" style="width: 600px;">
-
-      <%= cl_image_tag @lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
-
-
-</div>
+  <h2 class="d-flex justify-content-center">R$ <%= @lunchbox.price %>,00</h2>  
 
   <div class="d-flex justify-content-center">
     <%= link_to "Comprar", purchase_path, class: 'btn btn-primary m-3' %>
