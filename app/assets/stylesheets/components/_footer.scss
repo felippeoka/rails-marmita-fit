@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: space-around;
   height: 100px;
+  line-height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   bottom: 0;
-  position: relative;
+  position: absolute;
   width: 100%;
   margin-top: 16px;
 }
@@ -27,4 +28,12 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
 }
