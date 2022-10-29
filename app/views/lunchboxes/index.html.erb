@@ -13,7 +13,7 @@
       <% else %>
         <%= image_tag "logo.png", width: 400, height: 300, crop: :fill %>
       <% end %>
-        <div class="card-trip-infos" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <div class="card-trip-infos" style="background-color: white">
           <div>
             <h2><%= link_to lunchbox.food, lunchbox_path(lunchbox), class: "text-decoration-none" %></h2>
             <p><%= lunchbox.size %></p>
