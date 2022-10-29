@@ -1,21 +1,21 @@
 <div class="container d-flex justify-content-center">
   <div class="col-4">
-<br>
-<div class="d-flex justify-content-center">
-    <h2>Create your LunchBox</h2>
-</div>
+    <br>
+    <div class="d-flex justify-content-center">
+        <h2>Create your LunchBox</h2>
+    </div>
 
-<%= simple_form_for(@lunchbox) do |f| %>
-  <%= f.input :food,
-              input_html: {class: 'bg-white'} %>
-  <%= f.input :size, collection: ['Small', 'Medium', 'Large'], input_html: {class: 'bg-white'} %>
-  <%= f.input :price,
-              input_html: {class: 'bg-white'} %>
-  <%# <%= f.submit %>
-  <%= f.input :photo, as: :file %>
-  <div class="form-actions d-grid gap-2">
-  <%= f.button :submit, "Create Lunchbox", class: "btn btn-primary" %>
+    <%= simple_form_for(@lunchbox) do |f| %>
+      <%= f.input :food,
+                  input_html: {class: 'bg-white'} %>
+      <%= f.input :size, collection: ['Small', 'Medium', 'Large'], input_html: {class: 'bg-white'} %>
+      <%= f.input :price,
+                  input_html: {class: 'bg-white'} %>
+      <%# <%= f.submit %>
+      <%= f.input :photo, as: :file %>
+      <div class="form-actions d-grid gap-2">
+      <%= f.button :submit, "Create Lunchbox", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
-</div>
 </div>

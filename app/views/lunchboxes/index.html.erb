@@ -8,7 +8,11 @@
   <% @lunchboxes.each do |lunchbox| %>
     <div class="col-sm-12 col-md-4">
       <div class="card-trip mt-3">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+      <% if lunchbox.photo.attached? %>
+        <%= cl_image_path lunchbox.photo.key, width: 400, height: 300, crop: :fill %>       
+      <% else %>
+        <%= image_tag "logo.png", width: 400, height: 300, crop: :fill %>
+      <% end %>
         <div class="card-trip-infos" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
           <div>
             <h2><%= link_to lunchbox.food, lunchboxes_path(lunchbox), class: "text-decoration-none" %></h2>
@@ -19,8 +23,6 @@
       </div>
     </div>
 <% end %>
-
-<%= cl_image_tag @lunchbox.photo.key %>
-
+</div>
 
 </div>

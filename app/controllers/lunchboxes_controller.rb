@@ -13,8 +13,9 @@ class LunchboxesController < ApplicationController
 
   def create
     @lunchbox = Lunchbox.new(lunchbox_params)
+    @lunchbox.user = current_user
     if @lunchbox.save
-      redirect_to lunchbox_list(@lunchbox)
+      redirect_to lunchboxes_path(@lunchboxes)
     else
       render :new, status: :unprocessable_entity
     end
