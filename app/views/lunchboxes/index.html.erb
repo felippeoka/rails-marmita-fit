@@ -9,7 +9,7 @@
     <div class="col-sm-12 col-md-4">
       <div class="card-trip mt-3">
       <% if lunchbox.photo.attached? %>
-        <%= cl_image_path lunchbox.photo.key, width: 400, height: 300, crop: :fill %>       
+        <%= cl_image_path lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
       <% else %>
         <%= image_tag "logo.png", width: 400, height: 300, crop: :fill %>
       <% end %>
@@ -23,13 +23,6 @@
       </div>
     </div>
 <% end %>
-<<<<<<< HEAD
 </div>
-=======
-    </div>
-
-<%# <%= cl_image_tag @lunchbox.photo.key %>
-
->>>>>>> 5144dff2dbfae1db846b014bfbd5996d6fb9e73e
 
 </div>
