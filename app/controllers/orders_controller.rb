@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_lunchbox, only: [:new, :create]
+  # before_action :set_lunchbox, only: [:new, :create]
 
   def new
     @order = Order.new
