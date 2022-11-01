@@ -10,11 +10,20 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+      <%# nome e phone não funcionam %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 placeholder: 'user@domain.com',
                 input_html: { autocomplete: "email", class: 'bg-white' }%>
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                placeholder: 'João Silva'%>
+    <%= f.input :phone,
+                required: true,
+                autofocus: true,
+                placeholder: '(11)992283966'%>
     <%= f.input :password,
                 required: true,
                 placeholder: '*******',
