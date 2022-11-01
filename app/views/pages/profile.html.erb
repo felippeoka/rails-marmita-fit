@@ -1,0 +1,23 @@
+<div class="container my-5">
+  <h1 class="mb-3"><%= current_user.name %>'s Profile</h1>
+  <div class="row g-0 justify-content-center">
+    <div class="col-lg-3 bg-white border-end">
+      <div class="card border-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h5 class="card-title">Account Details</h5>
+            <p class="card-text text-muted">
+              <span class="fw-bold">Name: </span>
+              <%= current_user.name %>
+            </p>
+            <p class="card-text text-muted">
+              <span class="fw-bold">Email: </span>
+              <%= current_user.email %>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+            <%= link_to "Edit account", edit_user_registration_path, class: "btn btn-outline-warning" %>
+  </div>
+</div>

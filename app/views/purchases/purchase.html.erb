@@ -5,7 +5,15 @@
   <br>
   <div>
   <%# <div class="container d-flex justify-content-center"> %>
-    <h2 class="container d-flex justify-content-center">Compra concluída com sucesso!</h2>
+
+    <h2 class="container d-flex justify-content-center .text-light">Compra concluída com sucesso!</h2>
+  
+    <div class="mx-auto d-flex justify-content-center" style="width: 600px;">
+      <%= cl_image_tag @lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
+    </div>
+      <h2  class="d-flex justify-content-center"><%= @lunchbox.food  %></h2>
+      <h3 class="d-flex justify-content-center"><%= @lunchbox.size  %></h3>  
+      <h3 class="d-flex justify-content-center">R$ <%= @lunchbox.price %>,00</h3> 
     <div>
     <div>
   <h2  class="d-flex justify-content-center"><%= @lunchbox.food  %></h2>
@@ -16,7 +24,7 @@
       <%= cl_image_tag @lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
 </div>
       <div class="d-flex justify-content-center">
-      <a href="/lunchboxes" class="btn btn-default btn-secondary">Comprar mais</a>
+      <a href="/lunchboxes" class="btn btn-default btn-secondary mt-3">Comprar mais</a>
       </div>
     </div>
   </div>
