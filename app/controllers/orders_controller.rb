@@ -1,32 +1,30 @@
 class OrdersController < ApplicationController
-  # before_action :set_lunchbox, only: [:new, :create]
-
   def new
     @order = Order.new
+    @lunchbox = Lunchbox.find(params[:lunchbox_id])
+    # @order.user = current_user
+    # @order.lunchbox = @lunchbox
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.new
+    @lunchbox = Lunchbox.find(params[:lunchbox_id])
     @order.lunchbox = @lunchbox
+    @order.user = current_user
     if @order.save
       redirect_to lunchbox_path(@lunchbox)
     else
       render :new, status: :unprocessable_entity
     end
+    raise
   end
 
-  def destroy
+  def show
     @order = Order.find(params[:id])
-    @order.destroy
   end
 
-  private
-
-  def order_params
-    params.require(:order).permit(:user_id, :lunchbox_id)
-  end
-
-  def set_lunchbox
-    @lunchbox = Order.find(params[:lunchbox_id])
-  end
+  # def destroy
+  #   @order = Order.find(params[:id])
+  #   @order.destroy
+  # end
 end

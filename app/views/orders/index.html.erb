@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="card-category mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Orders
+  </div>
+
+<div class="row">
+  <% @orders.each do |order| %>
+    <div class="col-sm-12 col-md-4">
+      <div class="card-trip mt-3">
+        <div class="card-trip-infos" style="background-color: white">
+          <div>
+            <h2><%= order.id %></h2>
+            <h2><%= lunchbox.id %></h2>
+      </div>
+    </div>
+<% end %>
+</div>
+
+</div>

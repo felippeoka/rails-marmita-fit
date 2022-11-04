@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "lunchboxes#index"
 
-  resources :lunchboxes
+  resources :lunchboxes do
+    resources :orders
+  end
 
-  get 'lunchboxes/:id/purchase', to: 'purchases#purchase', as: :purchase
+
   get 'profile', to: 'pages#profile'
-
+  get 'lunchboxes/:id/purchase', to: 'purchases#purchase', as: :purchase
 end

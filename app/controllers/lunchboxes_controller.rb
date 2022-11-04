@@ -1,10 +1,15 @@
 class LunchboxesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @lunchboxes = Lunchbox.all
   end
 
   def show
     @lunchbox = Lunchbox.find(params[:id])
+    @order = Order.new
+    @order.user = current_user
+    @order.lunchbox = @lunchbox
   end
 
   def new
