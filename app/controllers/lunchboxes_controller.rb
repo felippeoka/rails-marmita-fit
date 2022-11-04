@@ -28,8 +28,8 @@ class LunchboxesController < ApplicationController
 
   def destroy
     @lunchbox = Lunchbox.find(params[:id])
-    
-    @lunchbox.destroy if @lunchbox.user == current_user 
+
+    @lunchbox.destroy if @lunchbox.user == current_user
       redirect_to root_path
   end
 
