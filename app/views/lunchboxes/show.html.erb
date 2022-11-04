@@ -9,7 +9,10 @@
 <div class="d-flex justify-content-center">
   <% if user_signed_in? %>
     <% if %>
-      <%= link_to "Comprar", new_lunchbox_order_path(@lunchbox), class: 'btn btn-primary m-3' %>
+      <%# link_to "Comprar", new_lunchbox_order_path(@lunchbox), class: 'btn btn-primary m-3' %>
+      <form action='<%= "/lunchboxes/#{@lunchbox.id}/orders" %>' method='post'>
+        <input type="submit" value='Comprar'>
+      </form>
     <% end %>
 
     <% if @lunchbox.user == current_user %>
