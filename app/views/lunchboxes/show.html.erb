@@ -3,8 +3,8 @@
 </div>
 
 <h1  class="d-flex justify-content-center"><%= @lunchbox.food  %></h1>
-<h2 class="d-flex justify-content-center"><%= @lunchbox.size  %></h2>  
-<h2 class="d-flex justify-content-center">R$ <%= @lunchbox.price %>,00</h2>  
+<h2 class="d-flex justify-content-center"><%= @lunchbox.size  %></h2>
+<h2 class="d-flex justify-content-center">R$ <%= @lunchbox.price %>,00</h2>
 
 <div class="d-flex justify-content-center">
   <% if user_signed_in? %>
@@ -12,9 +12,9 @@
     <%= link_to "Comprar", purchase_path, class: 'btn btn-primary m-3' %>
     <% Order.create(user_id: current_user.id, lunchbox_id: @lunchbox.id) %>
     <% end %>
-    <%# Deletar não funciona %>
-    <%= link_to "Deletar marmita", lunchbox_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <% else %>
-    <%= link_to "Comprar", new_user_session_path, class: "btn btn-secondary m-3" %>
+
+    <% if @lunchbox.user == current_user %>
+      <%= link_to "Deletar marmita", lunchbox_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger m-3" %>
+    <% end %>
   <% end %>
 </div>
