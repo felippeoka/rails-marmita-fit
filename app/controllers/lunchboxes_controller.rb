@@ -1,4 +1,6 @@
 class LunchboxesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @lunchboxes = Lunchbox.all
   end
@@ -23,8 +25,8 @@ class LunchboxesController < ApplicationController
 
   def destroy
     @lunchbox = Lunchbox.find(params[:id])
-    
-    @lunchbox.destroy if @lunchbox.user == current_user 
+
+    @lunchbox.destroy if @lunchbox.user == current_user
       redirect_to root_path
   end
 
