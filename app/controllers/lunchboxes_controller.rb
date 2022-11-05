@@ -2,7 +2,11 @@ class LunchboxesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    if params[:query]
+    @lunchboxes = Lunchbox.where(food: params[:query])
+    else
     @lunchboxes = Lunchbox.all
+    end
   end
 
   def show
