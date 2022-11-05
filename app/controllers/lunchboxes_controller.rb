@@ -13,8 +13,6 @@ class LunchboxesController < ApplicationController
   def show
     @lunchbox = Lunchbox.find(params[:id])
     @order = Order.new
-    @order.user = current_user
-    @order.lunchbox = @lunchbox
   end
 
   def new

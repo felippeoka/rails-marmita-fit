@@ -3,11 +3,9 @@ Rails.application.routes.draw do
   root to: "lunchboxes#index"
 
   resources :lunchboxes do
-    resources :orders, except: :show
+    resources :orders, only: [:new, :create]
   end
-
-  get 'orders/:id', to: 'orders#show', as: :order
-
+  resources :orders, only: :show
 
   get 'profile', to: 'pages#profile'
   get 'lunchboxes/:id/purchase', to: 'purchases#purchase', as: :purchase

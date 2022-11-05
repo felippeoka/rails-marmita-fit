@@ -10,9 +10,9 @@
   <% if user_signed_in? %>
     <% if %>
       <%# link_to "Comprar", new_lunchbox_order_path(@lunchbox), class: 'btn btn-primary m-3' %>
-      <form action='<%= "/lunchboxes/#{@lunchbox.id}/orders" %>' method='post'>
-        <input type="submit" class= "btn btn-outline-dark m-3" value='Comprar'>
-      </form>
+      <%= simple_form_for [ @lunchbox, @order ] do |f| %>
+        <%= f.button :submit, "Comprar", class: "btn btn-outline-dark m-3" %>
+      <% end %>
     <% end %>
 
     <% if @lunchbox.user == current_user %>
