@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: "lunchboxes#index"
 
   resources :lunchboxes do
-    resources :orders
+    resources :orders, except: :show
   end
+
+  get 'orders/:id', to: 'orders#show', as: :order
 
 
   get 'profile', to: 'pages#profile'

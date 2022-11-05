@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     @order.lunchbox = @lunchbox
     @order.user = current_user
     if @order.save
-      redirect_to lunchboxes_path
+      redirect_to order_path(@order.id)
     else
       render :new, status: :unprocessable_entity
     end
