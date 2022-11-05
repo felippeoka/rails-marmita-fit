@@ -10,7 +10,7 @@
             <h2><%= order.lunchbox.food %> </h2>
             <p><%= order.lunchbox.size %></p>
             <p>R$ <%= order.lunchbox.price %>,00</p>
-            <p><%= order.lunchbox.created_at.strftime("%d %b %Y") %></p>
+            <p><%= order.created_at.strftime("%d %b %Y") %></p>
           </div>
         </div>
       <% end %>
