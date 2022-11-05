@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :orders, only: :show
 
   get 'profile', to: 'pages#profile'
-  get 'lunchboxes/:id/purchase', to: 'purchases#purchase', as: :purchase
+  get 'profile/myorders', to: 'pages#orders', as: :orders
 end
