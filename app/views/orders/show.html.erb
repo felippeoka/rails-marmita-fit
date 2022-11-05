@@ -1,24 +1,21 @@
 <div class="container">
-  <%# <div class="card-category mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Marmitas Fit
-  </div> %>
   <br>
   <div>
-  <%# <div class="container d-flex justify-content-center"> %>
-
     <h2 class="container d-flex justify-content-center .text-light">Compra concluída com sucesso!</h2>
-
     <div class="mx-auto d-flex justify-content-center" style="width: 600px;">
-      <%= cl_image_tag @order.lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
-    </div>
-      <h2  class="d-flex justify-content-center"><%= @order.lunchbox.food  %></h2>
-      <h3 class="d-flex justify-content-center"><%= @order.lunchbox.size  %></h3>
-      <h3 class="d-flex justify-content-center">R$ <%= @order.lunchbox.price %>,00</h3>
-    <div>
-      <div class="d-flex justify-content-center">
-      <a href="/lunchboxes" class="btn btn-default btn-secondary mt-3">Comprar mais</a>
+      <div class="col-sm-12 col-md-8">
+        <div class="card-trip mt-3">
+          <%= cl_image_tag @order.lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
+          <div class="opacity-75">
+            <h3 class="d-flex justify-content-center mt-2"><%= @order.lunchbox.food  %></h3>
+            <h5 class="d-flex justify-content-center"><%= @order.lunchbox.size  %></h5>
+            <h5 class="d-flex justify-content-center">R$ <%= @order.lunchbox.price %>,00</h5>
+          </div>
+        </div>
+        <div class="d-grid mt-2" style="width: 400px;">
+          <%= link_to "Comprar mais", root_path, class:"btn btn-outline-secondary" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
