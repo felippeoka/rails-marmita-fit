@@ -16,14 +16,14 @@
       <%# link_to "Comprar", new_lunchbox_order_path(@lunchbox), class: 'btn btn-primary m-3' %>
       <div>
         <%= simple_form_for [ @lunchbox, @order ] do |f| %>
-        <%= f.button :submit, "Comprar", class: "btn btn-outline-dark mt-2", style:"width: 400px;"%>
+        <%= f.button :submit, "Buy", class: "btn btn-outline-dark mt-2", style:"width: 400px;"%>
         <% end %>
       <% end %>
       <% if @lunchbox.user == current_user %>
-        <%= link_to "Deletar marmita", lunchbox_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger mt-2", style:"width: 400px;" %>
+        <%= link_to "Delete marmita", lunchbox_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger mt-2", style:"width: 400px;" %>
       <% end %>
     </div>
   <% else %>
-    <%= link_to "Comprar", new_user_session_path, class: "btn btn-secondary m-3" %>
+    <%= link_to "Buy", new_user_session_path, class: "btn btn-secondary m-3" %>
   <% end %>
 </div>
