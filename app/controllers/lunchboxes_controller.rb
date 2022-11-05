@@ -3,8 +3,8 @@ class LunchboxesController < ApplicationController
 
   def index
     if params[:query]
-    @lunchboxes = Lunchbox.where(food: params[:query])
-    # @lunchboxes = Lunchbox.where("title ILIKE ?", "%#{params[:query]}%")
+    # @lunchboxes = Lunchbox.where(food: params[:query])
+    @lunchboxes = Lunchbox.where("food ILIKE ?", "%#{params[:query]}%")
     else
     @lunchboxes = Lunchbox.all
     end
