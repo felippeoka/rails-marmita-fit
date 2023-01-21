@@ -1,13 +1,14 @@
 <div class="container">
 <div class="row">
-  <% @lunchboxes.each do |lunchbox| %>
-    <div class="col-sm-12 col-md-4">
-      <div class="card-trip mt-3">
-      <% if lunchbox.photo.attached? %>
-        <%= cl_image_tag lunchbox.photo.key, width: 400, height: 300, crop: :fill %>
-      <% else %>
-        <%= image_tag "logo.png", width: 400, height: 300, crop: :fill %>
-      <% end %>
+  
+  <%# <% @lunchboxes.each do |lunchbox| %> %>
+    <%# <div class="col-sm-12 col-md-4"> %>
+      <%# <div class="card-trip mt-3"> %>
+      <%# <% if lunchbox.photo.attached? %> %>
+        <%# <%= cl_image_tag lunchbox.photo.key, width: 400, height: 300, crop: :fill %> %>
+      <%# <% else %> %>
+        <%# <%= image_tag "logo.png", width: 400, height: 300, crop: :fill %> %>
+      <%# <% end %> %>
         <div class="card-trip-infos" style="background-color: white">
           <div>
             <h2><%= link_to lunchbox.food, lunchbox_path(lunchbox), class: "text-decoration-none" %></h2>
